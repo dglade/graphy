@@ -19,3 +19,5 @@ RUN python3.11 -m venv /gql \
   && cd /app \
   && /gql/bin/hatch env create
 
+WORKDIR /app
+ENTRYPOINT ["/gql/bin/hatch", "env", "run", "server"]
