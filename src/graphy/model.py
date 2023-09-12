@@ -1,11 +1,11 @@
 import requests
 
-from .settings import metra_auth, metra_base_url
+from graphy import settings
 
 
 def get(path):
-    path = metra_base_url + path
-    resp = requests.get(path, auth=metra_auth)
+    path = settings.metra_base_url + path
+    resp = requests.get(path, auth=settings.metra_auth)
     resp.raise_for_status()
     return resp.json()
 
